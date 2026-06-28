@@ -126,26 +126,53 @@ while True:
     print("5.GC_content")
     print("6.exit")
     op = int(input("Enter the mode of operation :"))
+    valid = set("ATGC")
+    valid_R = set("AUGC")
     
     if op == 1:
        DNA_2 = ask()
-       cDNA(DNA_2)
+       if not all (base in valid for base in DNA_2) :
+           print("WARNING !! Invalid input sequence","\n")
+
+       else :  
+          cDNA(DNA_2)
+       
 
     elif op == 2:
        DNA_2 = ask()
-       reverse_cDNA(DNA_2)
+       if not all (base in valid for base in DNA_2) :
+           print("WARNING !! Invalid input sequence","\n")
+
+       else :   
+           reverse_cDNA(DNA_2)
+       
       
     elif op == 3:
         DNA_2 = ask()
-        mRNA(DNA_2)
+        if not all (base in valid for base in DNA_2) :
+           print("WARNING !! Invalid input sequence","\n")
+
+        else :   
+           mRNA(DNA_2)
+        
     
     elif op == 4:
         mRNA = input("enter the mRNA sequence :")
-        translation(mRNA)
+        if not all (base in valid_R for base in mRNA) :
+           print("WARNING !! Invalid input sequence","\n")
+
+        else :   
+           translation(mRNA)
+        
              
     elif op == 5:
         DNA_2 = ask()   
-        GC_cont(DNA_2)
+        if not all (base in valid for base in DNA_2) :
+           print("WARNING !! Invalid input sequence","\n")
+
+        else :   
+           GC_cont(DNA_2)
+        
 
     elif op == 6:
          break
