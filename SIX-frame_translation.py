@@ -80,111 +80,119 @@ DNA_2 = ask()
 print("\n\n")
 print("the DNA sequence : ",DNA_2)
 print("\n\n")
-print("The given sequence is ")
-print("1) 5' to 3' or")
-print("2) 3' to 5' ?")
-strand = int(input("enter 1 or 2 : "))
-print("\n")
 
-if strand == 1 :
+valid = set("ATGC")
+if not all (base in valid for base in DNA_2) :
+    print("WARNING !! , ambigious bases detected in the given sequence")
+    
+else :
+    print("The given sequence is ")
+    print("1) 5' to 3' or")
+    print("2) 3' to 5' ?")
+    strand = int(input("enter 1 or 2 : "))
+    print("\n")
+
+    if strand == 1 :
     #frame 1 
-    C_DNA = complement(DNA_2)
-    mRNA_D1 = mRNA(C_DNA)
-    mRNA_1 = codon_separation(mRNA_D1)
-    pro_1 = translation(mRNA_1)
-    print("The 5'3' frame 1 is :")
-    print(pro_1,"\n")
+       C_DNA = complement(DNA_2)
+       mRNA_D1 = mRNA(C_DNA)
+       mRNA_1 = codon_separation(mRNA_D1)
+       pro_1 = translation(mRNA_1)
+       print("The 5'3' frame 1 is :")
+       print(pro_1,"\n")
 
     #frame 2
-    mRNA_D2 = mRNA_D1[1:]
-    mRNA_2 = codon_separation(mRNA_D2)
-    pro_2 = translation(mRNA_2)
-    print("The 5'3' frame 2 is :")
-    print(pro_2,"\n")
+       mRNA_D2 = mRNA_D1[1:]
+       mRNA_2 = codon_separation(mRNA_D2)
+       pro_2 = translation(mRNA_2)
+       print("The 5'3' frame 2 is :")
+       print(pro_2,"\n")
 
     #frame 3 
-    mRNA_D3 = mRNA_D1[2:]
-    mRNA_3 = codon_separation(mRNA_D3)
-    pro_3 = translation(mRNA_3)
-    print("The 5'3' frame 3 is :")
-    print(pro_3,"\n")
+       mRNA_D3 = mRNA_D1[2:]
+       mRNA_3 = codon_separation(mRNA_D3)
+       pro_3 = translation(mRNA_3)
+       print("The 5'3' frame 3 is :")
+       print(pro_3,"\n")
 
     #frame 4 
-    RC_DNA = reverse_cDNA(DNA_2)
-    RCC_DNA = complement(RC_DNA)
-    mRNA_D4 = mRNA(RCC_DNA)
-    mRNA_4 = codon_separation(mRNA_D4)
-    pro_4 = translation(mRNA_4)
-    print("The 3'5' frame 1 is :")
-    print(pro_4,"\n")
+       RC_DNA = reverse_cDNA(DNA_2)
+       RCC_DNA = complement(RC_DNA)
+       mRNA_D4 = mRNA(RCC_DNA)
+       mRNA_4 = codon_separation(mRNA_D4)
+       pro_4 = translation(mRNA_4)
+       print("The 3'5' frame 1 is :")
+       print(pro_4,"\n")
 
     #frame 5
-    mRNA_D5 = mRNA_D4[1:]
-    mRNA_5 = codon_separation(mRNA_D5)
-    pro_5 = translation(mRNA_5)
-    print("The 3'5' frame 2 is :")
-    print(pro_5,"\n")
+       mRNA_D5 = mRNA_D4[1:]
+       mRNA_5 = codon_separation(mRNA_D5)
+       pro_5 = translation(mRNA_5)
+       print("The 3'5' frame 2 is :")
+       print(pro_5,"\n")
 
     #frame 6
-    mRNA_D6 = mRNA_D4[2:]
-    mRNA_6 = codon_separation(mRNA_D6)
-    pro_6 = translation(mRNA_6)
-    print("The 3'5' frame 3 is :")
-    print(pro_6,"\n")
+       mRNA_D6 = mRNA_D4[2:]
+       mRNA_6 = codon_separation(mRNA_D6)
+       pro_6 = translation(mRNA_6)
+       print("The 3'5' frame 3 is :")
+       print(pro_6,"\n")
 
 
-elif strand == 2 :
+    elif strand == 2 :
     #frame 1
-    mRNA_D1 = mRNA(DNA_2)
-    mRNA_1 = codon_separation(mRNA_D1)
-    pro_1 = translation(mRNA_1)
-    print("The 5'3' frame 1 is :")
-    print(pro_1)
-    print("\n")
+       mRNA_D1 = mRNA(DNA_2)
+       mRNA_1 = codon_separation(mRNA_D1)
+       pro_1 = translation(mRNA_1)
+       print("The 5'3' frame 1 is :")
+       print(pro_1)
+       print("\n")
 
     #frame 2
-    mRNA_D2 = mRNA_D1[1:]
-    mRNA_2 = codon_separation(mRNA_D2)
-    pro_2 = translation(mRNA_2)
-    print("The 5'3' frame 2 is :")
-    print(pro_2)
-    print("\n")
+       mRNA_D2 = mRNA_D1[1:]
+       mRNA_2 = codon_separation(mRNA_D2)
+       pro_2 = translation(mRNA_2)
+       print("The 5'3' frame 2 is :")
+       print(pro_2)
+       print("\n")
 
     #frame 3 
-    mRNA_D3 = mRNA_D1[2:]
-    mRNA_3 = codon_separation(mRNA_D3)
-    pro_3 = translation(mRNA_3)
-    print("The 5'3' frame 3 is :")
-    print(pro_3)
-    print("\n")
-
+       mRNA_D3 = mRNA_D1[2:]
+       mRNA_3 = codon_separation(mRNA_D3)
+       pro_3 = translation(mRNA_3)
+       print("The 5'3' frame 3 is :")
+       print(pro_3)
+       print("\n")
+ 
     #frame 4
-    RC_DNA = reverse_cDNA(DNA_2)
-    mRNA_D4 = mRNA(RC_DNA)
-    mRNA_4 = codon_separation(mRNA_D4)
-    pro_4 = translation(mRNA_4)
-    print("The 3'5' frame 1 is :")
-    print(pro_4)
-    print("\n")
+       RC_DNA = reverse_cDNA(DNA_2)
+       mRNA_D4 = mRNA(RC_DNA)
+       mRNA_4 = codon_separation(mRNA_D4)
+       pro_4 = translation(mRNA_4)
+       print("The 3'5' frame 1 is :")
+       print(pro_4)
+       print("\n")
 
     #frame 5
-    mRNA_D5 = mRNA_D4[1:]
-    mRNA_5 = codon_separation(mRNA_D5)
-    pro_5 = translation(mRNA_5)
-    print("The 3'5' frame 2 is :")
-    print(pro_5)
-    print("\n")
+       mRNA_D5 = mRNA_D4[1:]
+       mRNA_5 = codon_separation(mRNA_D5)
+       pro_5 = translation(mRNA_5)
+       print("The 3'5' frame 2 is :")
+       print(pro_5)
+       print("\n")
 
     #frame 6 
-    mRNA_D6 = mRNA_D4[2:]
-    mRNA_6 = codon_separation(mRNA_D6)
-    pro_6 = translation(mRNA_6)
-    print("The 3'5' frame 3 is :")
-    print(pro_6)
-    print("\n")
+       mRNA_D6 = mRNA_D4[2:]
+       mRNA_6 = codon_separation(mRNA_D6)
+       pro_6 = translation(mRNA_6)
+       print("The 3'5' frame 3 is :")
+       print(pro_6)
+       print("\n")
+ 
+
+    else :
+       print("Invalid input ")
 
 
-else :
-    print("Invalid input ")
 
 
