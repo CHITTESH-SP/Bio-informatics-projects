@@ -22,9 +22,7 @@ Learning Outcomes :
 This project demonstrates the implementation of key bioinformatics concepts, including nucleotide sequence processing, transcription, translation, codon recognition, and sequence composition analysis. It serves as a beginner-friendly introduction to computational biology and bioinformatics programming.
 
  Future Improvements :
-* Reverse Complement Generation
 * FASTA File Support
-* DNA/RNA Sequence Validation
 * Open Reading Frame (ORF) Detection
 * Six-Frame Translation
 * Export Results to Text or CSV Files
