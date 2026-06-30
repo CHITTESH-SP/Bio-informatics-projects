@@ -1,6 +1,5 @@
 
 
-
 def ask():
    import re
    DNA = input("Enter the DNA sequence :")
