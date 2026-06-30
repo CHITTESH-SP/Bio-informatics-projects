@@ -26,3 +26,4 @@ This project demonstrates the implementation of key bioinformatics concepts, inc
 * Six-Frame Translation
 * Export Results to Text or CSV Files
 * Graphical User Interface (GUI)
+
